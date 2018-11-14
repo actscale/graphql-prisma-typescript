@@ -1,6 +1,7 @@
-import * as jwt from 'jsonwebtoken'
+import * as jwt from 'jsonwebtoken';
+import { Context } from 'graphql-binding/dist/types';
 
-export function getUserId(context) {
+export function getUserId(context: Context) {
   const Authorization = context.request.get('Authorization')
   if (Authorization) {
     const token = Authorization.replace('Bearer ', '')
